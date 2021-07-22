@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 
-import firebase from "firebase";
+import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 
@@ -57,7 +57,35 @@ function SignOut() {
 }
 
 function ChatRoom() {
+  const messagesRef = firestore.collection('messages');
+  const query = messagesRef.orderBy('createdAt').limit(25);
 
+  const [messages] = useCollectionData(query, { idField: 'id' });
+
+  return (
+    <>
+      <div>
+        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />)}
+      </div>
+
+      <form>
+
+      </form>
+    </>
+  )
+}
+
+function ChatMessage(props) {
+  const { text, uid, photoURL } = props.message;
+
+  const messageClass = uid === auth.currentUser.uid ? 'sent' : 'recieved';
+
+  return (
+    <div className={`message ${messageClass}`}>
+      <img src={photoURL} alt="icon" />
+      <p>{text}</p>
+    </div>
+  )
 }
 
 export default App;
