@@ -45,14 +45,14 @@ function SignIn() {
   }
 
   return (
-    <button onClick={signInWithGoogle}>Sign in with Google</button>
+    <button className="signIn" onClick={signInWithGoogle}>Sign in with Google</button>
   )
 }
 
 function SignOut() {
   return auth.currentUser && (
 
-    <button onClick={() => auth.signOut()}>Sign Out</button>
+    <button className="logout" onClick={() => auth.signOut()}>Sign Out</button>
   )
 }
 
@@ -97,7 +97,7 @@ function ChatRoom() {
 
         <input value={formValue} onChange={(e) => setFormValue(e.target.value)} />
 
-        <button type="submit">🕊</button>
+        <button className="send" type="submit">🕊</button>
 
       </form>
     </>

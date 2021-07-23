@@ -25,6 +25,17 @@ body {
   box-sizing: border-box;
 }
 
+ button.signIn {
+  border-radius: 2em;
+  background: rgba(39, 136, 160, 0.938);
+}
+
+header .logout {
+  border-radius: 2em;
+  width: 8em;
+  background: rgba(19, 177, 189, 0.938);
+}
+
 .App section {
   display: flex;
   flex-direction: column;
@@ -67,7 +78,7 @@ form {
 
 form button {
   width: 20%;
-  background-color: rgb(56, 56, 143);
+  background: rgba(39, 136, 160, 0.938);
 }
 
 
@@ -80,6 +91,7 @@ input {
   outline: none;
   border: none;
   padding: 0 10px;
+  border-radius: 3em;
 }
 
 button {
@@ -101,7 +113,7 @@ button:disabled {
 
 
 .sign-in {
-  color: #282c34;
+  color: #283430;
   background: white;
   max-width: 400px;
   margin: 0 auto;
@@ -134,9 +146,13 @@ p {
   flex-direction: row-reverse;
 }
 
+button.send {
+  border-radius: 4em;
+}
+
 .sent p {
   color: white;
-  background: #0b93f6;
+  background: #613f62ed;
   align-self: flex-end;
 }
 .received p {
